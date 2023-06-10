@@ -46,4 +46,4 @@ export type RequestOptions = {
     [key: string]: string;
 };
 
-export type CallbackLoad<T> = (data: T) => void;
+export type TCallback<T> = (data?: T) => void;
