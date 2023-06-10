@@ -32,3 +32,18 @@ export interface ISourcesEverything {
     status: 'ok' | 'error';
     sources: ISources[];
 }
+
+export interface ILoaderOptions {
+    apiKey: string;
+}
+
+export enum StatusCodes {
+    Code401 = 401,
+    Code404 = 404,
+}
+
+export type RequestOptions = {
+    [key: string]: string;
+};
+
+export type CallbackLoad<T> = (data: T) => void;
