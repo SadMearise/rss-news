@@ -49,7 +49,7 @@ class News {
       }
     });
 
-    const newsBlock = document.querySelector('.news');
+    const newsBlock: HTMLElement | null = document.querySelector('.news');
     if (newsBlock !== null) {
       newsBlock.innerHTML = '';
       newsBlock.appendChild(fragment);

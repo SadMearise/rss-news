@@ -3,9 +3,9 @@ import { AppView } from '../view/appView';
 import { INewsEverything, ISourcesEverything } from '../../types/index';
 
 class App {
-  private controller;
+  private readonly controller: AppController;
 
-  private view;
+  private readonly view: AppView;
 
   constructor() {
     this.controller = new AppController();
