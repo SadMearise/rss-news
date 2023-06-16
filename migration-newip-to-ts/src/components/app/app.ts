@@ -3,30 +3,30 @@ import { AppView } from '../view/appView';
 import { INewsEverything, ISourcesEverything } from '../../types/index';
 
 class App {
-    private controller;
+  private controller;
 
-    private view;
+  private view;
 
-    constructor() {
-        this.controller = new AppController();
-        this.view = new AppView();
+  constructor() {
+    this.controller = new AppController();
+    this.view = new AppView();
+  }
+
+  public start(): void {
+    const sourcesEl: Element | null = document.querySelector('.sources');
+
+    if (sourcesEl !== null) {
+      sourcesEl.addEventListener('click', (e: Event) =>
+        this.controller.getNews(e, (data: INewsEverything | undefined): void => {
+          if (data !== undefined) this.view.drawNews(data);
+        })
+      );
     }
 
-    public start(): void {
-        const sourcesEl: Element | null = document.querySelector('.sources');
-
-        if (sourcesEl !== null) {
-            sourcesEl.addEventListener('click', (e: Event) =>
-                this.controller.getNews(e, (data: INewsEverything | undefined): void => {
-                    if (data !== undefined) this.view.drawNews(data);
-                })
-            );
-        }
-
-        this.controller.getSources((data: ISourcesEverything | undefined): void => {
-            if (data !== undefined) this.view.drawSources(data);
-        });
-    }
+    this.controller.getSources((data: ISourcesEverything | undefined): void => {
+      if (data !== undefined) this.view.drawSources(data);
+    });
+  }
 }
 
 export default App;

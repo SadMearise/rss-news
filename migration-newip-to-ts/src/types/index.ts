@@ -1,49 +1,49 @@
 export interface INews {
-    author: string;
-    content: string;
-    description: string;
-    publishedAt: string;
-    source: {
-        id: string;
-        name: string;
-    };
-    title: string;
-    url: string;
-    urlToImage: string;
+  author: string;
+  content: string;
+  description: string;
+  publishedAt: string;
+  source: {
+    id: string;
+    name: string;
+  };
+  title: string;
+  url: string;
+  urlToImage: string;
 }
 
 export interface ISources {
-    category: string;
-    country: string;
-    description: string;
-    id: string;
-    language: string;
-    name: string;
-    url: string;
+  category: string;
+  country: string;
+  description: string;
+  id: string;
+  language: string;
+  name: string;
+  url: string;
 }
 
 export interface INewsEverything {
-    status: 'ok' | 'error';
-    totalResults: number;
-    articles: INews[];
+  status: 'ok' | 'error';
+  totalResults: number;
+  articles: INews[];
 }
 
 export interface ISourcesEverything {
-    status: 'ok' | 'error';
-    sources: ISources[];
+  status: 'ok' | 'error';
+  sources: ISources[];
 }
 
 export interface ILoaderOptions {
-    apiKey: string;
+  apiKey: string;
 }
 
 export enum StatusCodes {
-    Code401 = 401,
-    Code404 = 404,
+  Code401 = 401,
+  Code404 = 404,
 }
 
 export type RequestOptions = {
-    [key: string]: string;
+  [key: string]: string;
 };
 
 export type TCallback<T> = (data?: T) => void;
