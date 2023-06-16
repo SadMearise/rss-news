@@ -1,4 +1,5 @@
-import { ILoaderOptions, StatusCodes, RequestOptions, INewsEverything, ISourcesEverything } from '../../types/index';
+import { ILoaderOptions, RequestOptions, INewsEverything, ISourcesEverything } from '../../types/index';
+import { StatusCodes } from '../../constants';
 
 class Loader {
   constructor(private baseLink: string, protected options: ILoaderOptions) {

@@ -37,11 +37,6 @@ export interface ILoaderOptions {
   apiKey: string;
 }
 
-export enum StatusCodes {
-  Code401 = 401,
-  Code404 = 404,
-}
-
 export type RequestOptions = {
   [key: string]: string;
 };

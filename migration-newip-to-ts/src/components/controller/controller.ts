@@ -1,11 +1,12 @@
 import AppLoader from './appLoader';
 import { ISourcesEverything, INewsEverything, TCallback } from '../../types/index';
+import { Paths } from '../../constants';
 
 class AppController extends AppLoader {
   public getSources(callback: TCallback<ISourcesEverything>): void {
     super.getResp(
       {
-        endpoint: 'sources',
+        endpoint: Paths.sources,
       },
       callback
     );
@@ -28,7 +29,7 @@ class AppController extends AppLoader {
                 newsContainer.setAttribute('data-source', sourceId);
                 super.getResp(
                   {
-                    endpoint: 'everything',
+                    endpoint: Paths.everything,
                     options: {
                       sources: sourceId,
                     },
