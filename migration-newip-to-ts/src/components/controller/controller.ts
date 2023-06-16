@@ -16,7 +16,9 @@ class AppController extends AppLoader {
     let { target }: { target: EventTarget | null } = e;
     const newsContainer: EventTarget | null = e.currentTarget;
 
-    if (!(newsContainer instanceof Element)) throw new Error();
+    if (!(newsContainer instanceof Element)) {
+      throw new Error();
+    }
 
     while (target !== newsContainer) {
       if (target instanceof HTMLElement && target !== null) {

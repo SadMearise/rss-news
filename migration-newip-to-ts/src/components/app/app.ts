@@ -18,13 +18,17 @@ class App {
     if (sourcesEl !== null) {
       sourcesEl.addEventListener('click', (e: Event) =>
         this.controller.getNews(e, (data: INewsEverything | undefined): void => {
-          if (data !== undefined) this.view.drawNews(data);
+          if (data !== undefined) {
+            this.view.drawNews(data);
+          }
         })
       );
     }
 
     this.controller.getSources((data: ISourcesEverything | undefined): void => {
-      if (data !== undefined) this.view.drawSources(data);
+      if (data !== undefined) {
+        this.view.drawSources(data);
+      }
     });
   }
 }

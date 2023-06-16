@@ -18,8 +18,9 @@ class Loader {
 
   private errorHandler(res: Response): Response | never {
     if (!res.ok) {
-      if (res.status === StatusCodes.Code401 || res.status === StatusCodes.Code404)
+      if (res.status === StatusCodes.Code401 || res.status === StatusCodes.Code404) {
         console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
+      }
       throw Error(res.statusText);
     }
 
@@ -47,9 +48,7 @@ class Loader {
       .then(this.errorHandler)
       .then((res: Response) => res.json())
       .then((data: INewsEverything | ISourcesEverything) => callback(data))
-      .catch((err: unknown) => {
-        if (err instanceof Error) console.error(err);
-      });
+      .catch((err: unknown) => err instanceof Error && console.error(err));
   }
 }
 

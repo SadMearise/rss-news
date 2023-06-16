@@ -12,12 +12,16 @@ class News {
       if (newsItemTemp !== null) {
         const newsClone: Node = newsItemTemp.content.cloneNode(true);
 
-        if (!(newsClone instanceof DocumentFragment)) throw new Error();
+        if (!(newsClone instanceof DocumentFragment)) {
+          throw new Error();
+        }
 
         if (idx % 2) {
           const newsItem: HTMLElement | null = newsClone.querySelector('.news__item');
 
-          if (newsItem !== null) newsItem.classList.add('alt');
+          if (newsItem !== null) {
+            newsItem.classList.add('alt');
+          }
         }
 
         const newsMetaPhoto: HTMLElement | null = newsClone.querySelector('.news__meta-photo');
@@ -26,7 +30,9 @@ class News {
         }
 
         const newsMetaAuthor: HTMLElement | null = newsClone.querySelector('.news__meta-author');
-        if (newsMetaAuthor !== null) newsMetaAuthor.textContent = item.author || item.source.name;
+        if (newsMetaAuthor !== null) {
+          newsMetaAuthor.textContent = item.author || item.source.name;
+        }
 
         const newsMetaDate: HTMLElement | null = newsClone.querySelector('.news__meta-date');
         if (newsMetaDate !== null) {
@@ -34,16 +40,24 @@ class News {
         }
 
         const descriptionTitle: HTMLElement | null = newsClone.querySelector('.news__description-title');
-        if (descriptionTitle !== null) descriptionTitle.textContent = item.title;
+        if (descriptionTitle !== null) {
+          descriptionTitle.textContent = item.title;
+        }
 
         const descriptionSource: HTMLElement | null = newsClone.querySelector('.news__description-source');
-        if (descriptionSource !== null) descriptionSource.textContent = item.source.name;
+        if (descriptionSource !== null) {
+          descriptionSource.textContent = item.source.name;
+        }
 
         const descriptionContent: HTMLElement | null = newsClone.querySelector('.news__description-content');
-        if (descriptionContent !== null) descriptionContent.textContent = item.description;
+        if (descriptionContent !== null) {
+          descriptionContent.textContent = item.description;
+        }
 
         const readMore: HTMLElement | null = newsClone.querySelector('.news__read-more a');
-        if (readMore !== null) readMore.setAttribute('href', item.url);
+        if (readMore !== null) {
+          readMore.setAttribute('href', item.url);
+        }
 
         fragment.append(newsClone);
       }

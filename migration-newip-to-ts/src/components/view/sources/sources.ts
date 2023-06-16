@@ -10,13 +10,19 @@ class Sources {
       if (sourceItemTemp !== null) {
         const sourceClone: Node = sourceItemTemp.content.cloneNode(true);
 
-        if (!(sourceClone instanceof DocumentFragment)) throw new Error();
+        if (!(sourceClone instanceof DocumentFragment)) {
+          throw new Error();
+        }
 
         const sourceItemName: HTMLElement | null = sourceClone.querySelector('.source__item-name');
-        if (sourceItemName !== null) sourceItemName.textContent = item.name;
+        if (sourceItemName !== null) {
+          sourceItemName.textContent = item.name;
+        }
 
         const sourceItem: HTMLElement | null = sourceClone.querySelector('.source__item');
-        if (sourceItem !== null) sourceItem.setAttribute('data-source-id', item.id);
+        if (sourceItem !== null) {
+          sourceItem.setAttribute('data-source-id', item.id);
+        }
 
         fragment.append(sourceClone);
       }
@@ -24,7 +30,9 @@ class Sources {
 
     const sources: HTMLElement | null = document.querySelector('.sources');
 
-    if (sources !== null) sources.append(fragment);
+    if (sources !== null) {
+      sources.append(fragment);
+    }
   }
 }
 
