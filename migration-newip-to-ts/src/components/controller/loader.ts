@@ -1,4 +1,4 @@
-import { ILoaderOptions, RequestOptions, INewsEverything, ISourcesEverything } from '../../types/index';
+import { ILoaderOptions, RequestOptions, INewsEverything, ISourcesEverything } from '../../types';
 import { StatusCodes } from '../../constants';
 
 class Loader {

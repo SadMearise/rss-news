@@ -1,5 +1,5 @@
 import AppLoader from './appLoader';
-import { ISourcesEverything, INewsEverything, TCallback } from '../../types/index';
+import { ISourcesEverything, INewsEverything, TCallback } from '../../types';
 import { Paths } from '../../constants';
 
 class AppController extends AppLoader {

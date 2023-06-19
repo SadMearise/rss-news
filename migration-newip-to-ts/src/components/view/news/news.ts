@@ -1,5 +1,5 @@
 import './news.css';
-import { INews } from '../../../types/index';
+import { INews } from '../../../types';
 
 class News {
   public draw(data: INews[]): void {

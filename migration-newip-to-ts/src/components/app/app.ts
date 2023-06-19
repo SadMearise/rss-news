@@ -1,6 +1,6 @@
 import AppController from '../controller/controller';
 import { AppView } from '../view/appView';
-import { INewsEverything, ISourcesEverything } from '../../types/index';
+import { INewsEverything, ISourcesEverything } from '../../types';
 
 class App {
   private readonly controller: AppController;
